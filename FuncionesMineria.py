@@ -975,7 +975,7 @@ def summary_glm(modelo, varObjBin, datos):
     X_design = np.hstack([np.ones((datos.shape[0], 1)), datos])
 
     # Calcula la matriz de covarianza.
-    V = np.diagflat(np.product(p, axis=1))
+    V = np.diagflat(np.prod(p, axis=1))
     matriz_cov = np.linalg.inv(np.dot(np.dot(X_design.T, V), X_design))
 
     # Obtiene los coeficientes del modelo ajustado, excluyendo las columnas eliminadas.
